@@ -173,9 +173,10 @@ def generate_launch_description():
                 namespace="audio",
                 parameters=[
                     {
+                        "device": LaunchConfiguration("device", default=4),  
                         "format": LaunchConfiguration("format", default=1),
-                        "channels": LaunchConfiguration("channels", default=1),
-                        "rate": LaunchConfiguration("rate", default=16000),
+                        "channels": LaunchConfiguration("channels", default=2),
+                        "rate": LaunchConfiguration("rate", default=44100),
                         "chunk": LaunchConfiguration("chunk", default=512),
                     }
                 ],
@@ -186,5 +187,6 @@ def generate_launch_description():
                     )
                 ),
             ),
+
         ]
     )
